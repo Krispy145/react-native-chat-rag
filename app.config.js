@@ -1,0 +1,1 @@
+export default { expo: { name: "react-native-rag", slug: "react-native-rag", scheme: "react-native-rag", sdkVersion: "51.0.0", extra: { apiBaseUrl: "http://localhost:8000" } } }
