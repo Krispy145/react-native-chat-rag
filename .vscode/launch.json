@@ -1,0 +1,86 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Launch Expo (Development)",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/node_modules/.bin/expo",
+      "args": ["start", "--dev-client"],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "env": {
+        "EXPO_DEVTOOLS_LISTEN_ADDRESS": "0.0.0.0"
+      }
+    },
+    {
+      "name": "Launch Expo (Web)",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/node_modules/.bin/expo",
+      "args": ["start", "--web"],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen"
+    },
+    {
+      "name": "Launch Expo (Android)",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/node_modules/.bin/expo",
+      "args": ["run:android"],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen"
+    },
+    {
+      "name": "Launch Expo (iOS)",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/node_modules/.bin/expo",
+      "args": ["run:ios"],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen"
+    },
+    {
+      "name": "Debug React Native (Android)",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/node_modules/.bin/expo",
+      "args": ["start", "--dev-client", "--android"],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "env": {
+        "EXPO_DEVTOOLS_LISTEN_ADDRESS": "0.0.0.0"
+      }
+    },
+    {
+      "name": "Debug React Native (iOS)",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/node_modules/.bin/expo",
+      "args": ["start", "--dev-client", "--ios"],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "env": {
+        "EXPO_DEVTOOLS_LISTEN_ADDRESS": "0.0.0.0"
+      }
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Launch Expo + Debug Android",
+      "configurations": ["Launch Expo (Development)", "Debug React Native (Android)"],
+      "stopAll": true
+    },
+    {
+      "name": "Launch Expo + Debug iOS",
+      "configurations": ["Launch Expo (Development)", "Debug React Native (iOS)"],
+      "stopAll": true
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "React FC (typed)": {
+    "prefix": "rft",
+    "body": [
+      "import React from 'react';",
+      "",
+      "export interface ${1:Name}Props {",
+      "  $2",
+      "}",
+      "",
+      "export default function ${1:Name}(props: ${1:Name}Props) {",
+      "  return <div>${1:Name}</div>;",
+      "}"
+    ],
+    "description": "Typed React function component"
+  },
+  "Hook skeleton": {
+    "prefix": "usehook",
+    "body": [
+      "import { useState, useEffect } from 'react';",
+      "",
+      "export function use${1:Thing}() {",
+      "  const [state, setState] = useState<$2>();",
+      "  useEffect(() => {",
+      "    // init",
+      "  }, []);",
+      "  return state;",
+      "}"
+    ],
+    "description": "Custom hook template"
+  },
+  "Styled component (web)": {
+    "prefix": "scweb",
+    "body": [
+      "import styled from 'styled-components';",
+      "",
+      "export const ${1:Box} = styled.div`",
+      "  display: flex;",
+      "  align-items: center;",
+      "  justify-content: center;",
+      "`;"
+    ],
+    "description": "Styled component (web)"
+  },
+  "Styled component (native)": {
+    "prefix": "scnative",
+    "body": [
+      "import styled from 'styled-components/native';",
+      "",
+      "export const ${1:Box} = styled.View`",
+      "  flex: 1;",
+      "  align-items: center;",
+      "  justify-content: center;",
+      "`;"
+    ],
+    "description": "Styled component (React Native)"
+  }
+}

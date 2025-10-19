@@ -1,0 +1,20 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "usernamehw.errorlens",
+    "dsznajder.es7-react-js-snippets",
+    "formulahendry.auto-rename-tag",
+    "christian-kohler.path-intellisense",
+    "wix.vscode-import-cost",
+    "alefragnani.project-manager",
+    "xabikos.JavaScriptSnippets",
+    "naumovs.color-highlight",
+    "gruntfuggly.todo-tree",
+    "xabikos.ReactSnippets",
+    "msjsdiag.vscode-react-native",
+    "csstools.postcss",
+    "bradlc.vscode-tailwindcss",
+    "planbcoding.vscode-react-refactor"
+  ]
+}

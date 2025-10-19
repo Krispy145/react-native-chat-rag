@@ -1,7 +1,8 @@
-import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { SafeAreaView, View, Text, Button, TextInput } from 'react-native';
+import React from 'react';
+import { Button, Text, TextInput, View } from 'react-native';
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import { useAuthStore } from './store/authStore';
 
 function ChatScreen() {
@@ -26,8 +27,12 @@ function ChatScreen() {
     <SafeAreaView>
       <View style={{ padding: 16 }}>
         <Text style={{ fontSize: 20, fontWeight: '600', marginBottom: 8 }}>RAG Chat</Text>
-        <TextInput placeholder="Ask something..." value={q} onChangeText={setQ}
-          style={{ borderWidth: 1, padding: 10, marginBottom: 8 }} />
+        <TextInput
+          placeholder="Ask something..."
+          value={q}
+          onChangeText={setQ}
+          style={{ borderWidth: 1, padding: 10, marginBottom: 8 }}
+        />
         <Button title={loading ? 'Asking...' : 'Ask'} onPress={ask} disabled={loading} />
         <View style={{ height: 12 }} />
         <Text selectable>{answer}</Text>
@@ -44,15 +49,28 @@ function LoginScreen({ navigation }: any) {
     <SafeAreaView>
       <View style={{ padding: 16 }}>
         <Text style={{ fontSize: 20, fontWeight: '600', marginBottom: 8 }}>Sign in</Text>
-        <TextInput placeholder="Email" value={email} onChangeText={setEmail}
-          autoCapitalize="none" keyboardType="email-address"
-          style={{ borderWidth: 1, padding: 10, marginBottom: 8 }} />
-        <TextInput placeholder="Password" value={password} onChangeText={setPassword}
-          secureTextEntry style={{ borderWidth: 1, padding: 10, marginBottom: 8 }} />
-        <Button title="Sign in" onPress={async () => {
-          const ok = await login({ email, password });
-          if (ok) navigation.replace('Chat');
-        }} />
+        <TextInput
+          placeholder="Email"
+          value={email}
+          onChangeText={setEmail}
+          autoCapitalize="none"
+          keyboardType="email-address"
+          style={{ borderWidth: 1, padding: 10, marginBottom: 8 }}
+        />
+        <TextInput
+          placeholder="Password"
+          value={password}
+          onChangeText={setPassword}
+          secureTextEntry
+          style={{ borderWidth: 1, padding: 10, marginBottom: 8 }}
+        />
+        <Button
+          title="Sign in"
+          onPress={async () => {
+            const ok = await login({ email, password });
+            if (ok) navigation.replace('Chat');
+          }}
+        />
       </View>
     </SafeAreaView>
   );
@@ -63,14 +81,16 @@ const Stack = createNativeStackNavigator();
 export default function App() {
   const isAuthed = useAuthStore((s) => !!s.accessToken);
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        {isAuthed ? (
-          <Stack.Screen name="Chat" component={ChatScreen} />
-        ) : (
-          <Stack.Screen name="Login" component={LoginScreen} />
-        )}
-      </Stack.Navigator>
-    </NavigationContainer>
+    <SafeAreaProvider>
+      <NavigationContainer>
+        <Stack.Navigator>
+          {isAuthed ? (
+            <Stack.Screen name="Chat" component={ChatScreen} />
+          ) : (
+            <Stack.Screen name="Login" component={LoginScreen} />
+          )}
+        </Stack.Navigator>
+      </NavigationContainer>
+    </SafeAreaProvider>
   );
 }
