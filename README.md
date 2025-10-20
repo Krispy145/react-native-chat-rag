@@ -9,7 +9,7 @@ Expo + TS: secure token storage, RAG chat screen, Axios interceptors.
 - **Status:** scaffolded (Scaffolded)
 - **Focus:** Expo + TS: secure token storage, RAG chat screen, Axios interceptors.
 - **Last updated:** 13/10/2025
-- **Target completion:** 24/10/2025
+- **Target completion:** 27/10/2025
 
 ---
 
@@ -115,9 +115,9 @@ npm test
 
 | Milestone                    | Category              | Target Date | Status     |
 | ---------------------------- | --------------------- | ----------- | ---------- |
-| Scaffold repo | React Native | 11/10/2025 | ✅ Done |
-| Login + secure storage | React Native | 14/10/2025 | ⏳ In Progress |
-| RAG chat screen (/rag/query) | React Native | 18/10/2025 | ⏳ In Progress |
+| Scaffold repo | React Native | 26/10/2025 | ✅ Done |
+| Login + secure storage | React Native | 26/10/2025 | ⏳ In Progress |
+| RAG chat screen (/rag/query) | React Native | 26/10/2025 | ⏳ In Progress |
 | Streaming chat (SSE/WS) | React Native | 24/10/2025 | ⏳ In Progress |
 
 
