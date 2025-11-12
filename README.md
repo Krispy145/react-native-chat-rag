@@ -8,7 +8,7 @@ Expo + TS: secure token storage, RAG chat screen, Axios interceptors.
 
 - **Status:** scaffolded (Scaffolded)
 - **Focus:** Expo + TS: secure token storage, RAG chat screen, Axios interceptors.
-- **Last updated:** 11/11/2025
+- **Last updated:** 12/11/2025
 - **Target completion:** 19/11/2025
 
 ---
